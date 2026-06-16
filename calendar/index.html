@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Calendar</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <button class="nav-btn" id="prevMonth" aria-label="Previous month">&#8249;</button>
+      <div class="header-center">
+        <h1 class="month-title" id="monthTitle"></h1>
+        <button class="today-btn" id="goToday">Today</button>
+      </div>
+      <button class="nav-btn" id="nextMonth" aria-label="Next month">&#8250;</button>
+    </header>
+
+    <div class="weekdays">
+      <div>Sun</div><div>Mon</div><div>Tue</div><div>Wed</div>
+      <div>Thu</div><div>Fri</div><div>Sat</div>
+    </div>
+
+    <div class="grid" id="calendarGrid"></div>
+  </div>
+
+  <!-- Event modal -->
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" role="dialog" aria-modal="true" aria-labelledby="modalDate">
+      <div class="modal-header">
+        <h2 id="modalDate"></h2>
+        <button class="close-btn" id="closeModal" aria-label="Close">&times;</button>
+      </div>
+      <ul class="event-list" id="eventList"></ul>
+      <form class="event-form" id="eventForm">
+        <input
+          type="text"
+          id="eventInput"
+          placeholder="Add an event…"
+          maxlength="80"
+          autocomplete="off"
+        />
+        <input type="time" id="eventTime" />
+        <button type="submit" class="add-btn">Add</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
